@@ -1,0 +1,20 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="maik (generated)" id="1547396203917-1">
+        <createTable tableName="applicant">
+            <column name="id" type="VARCHAR(40)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="version" type="INT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="maik (generated)" id="1547396203917-2">
+        <addPrimaryKey columnNames="id" constraintName="applicantPK" tableName="applicant"/>
+    </changeSet>
+    <changeSet author="maik (generated)" id="1547396203917-3">
+        <dropTable tableName="PARTNER"/>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,57 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="maik (generated)" id="1547405762389-1">
+        <createTable tableName="job_offer">
+            <column name="id" type="VARCHAR(40)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="jobtitle" type="VARCHAR(80)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="maik (generated)" id="1547405762389-2">
+        <createTable tableName="job_offer_vacancies">
+            <column name="job_offer" type="VARCHAR(40)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="vacancies" type="VARCHAR(40)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="maik (generated)" id="1547405762389-3">
+        <createTable tableName="vakancy">
+            <column name="id" type="VARCHAR(40)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="jobtilte" type="VARCHAR(80)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="maik (generated)" id="1547405762389-4">
+        <createTable tableName="vakancy_job_offers">
+            <column name="vakancy" type="VARCHAR(40)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="job_offers" type="VARCHAR(40)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="maik (generated)" id="1547405762389-5">
+        <addPrimaryKey columnNames="id" constraintName="job_offerPK" tableName="job_offer"/>
+    </changeSet>
+    <changeSet author="maik (generated)" id="1547405762389-6">
+        <addPrimaryKey columnNames="id" constraintName="vakancyPK" tableName="vakancy"/>
+    </changeSet>
+    <changeSet author="maik (generated)" id="1547405762389-7">
+        <addForeignKeyConstraint baseColumnNames="job_offers" baseTableName="vakancy_job_offers" constraintName="FK_32efv0f00kmp23ggee61vjjs3" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="job_offer"/>
+    </changeSet>
+    <changeSet author="maik (generated)" id="1547405762389-8">
+        <addForeignKeyConstraint baseColumnNames="job_offer" baseTableName="job_offer_vacancies" constraintName="FK_lgkwoxlvfbn83tsm80j02fyrj" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="job_offer"/>
+    </changeSet>
+    <changeSet author="maik (generated)" id="1547405762389-9">
+        <addForeignKeyConstraint baseColumnNames="vacancies" baseTableName="job_offer_vacancies" constraintName="FK_ndtyjvjv772ny799pddjelw8a" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="vakancy"/>
+    </changeSet>
+    <changeSet author="maik (generated)" id="1547405762389-10">
+        <addForeignKeyConstraint baseColumnNames="vakancy" baseTableName="vakancy_job_offers" constraintName="FK_shks998cdndrhjr7fbexb4alk" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="vakancy"/>
+    </changeSet>
+</databaseChangeLog>
