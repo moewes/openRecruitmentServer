@@ -1,4 +1,4 @@
-package org.openrecruitment.model;
+package org.openrecruitment.persistence.entities;
 
 import javax.persistence.*;
 import java.time.LocalDate;

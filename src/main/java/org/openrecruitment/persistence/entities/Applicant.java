@@ -1,18 +1,13 @@
-package org.openrecruitment.model;
+package org.openrecruitment.persistence.entities;
 
 import javax.persistence.Id;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import java.io.Serializable;
-import java.util.UUID;
 import javax.persistence.Table;
 import javax.persistence.Version;
-import javax.validation.constraints.Size;
 
 @Entity
-@Table(name = "APPLICANT")
+@Table(name = "applicant")
 public class Applicant {
 
 	@Id
@@ -36,9 +31,7 @@ public class Applicant {
 		}
 		Applicant other = (Applicant) obj;
 		if (id != null) {
-			if (!id.equals(other.id)) {
-				return false;
-			}
+			return id.equals(other.id);
 		}
 		return true;
 	}

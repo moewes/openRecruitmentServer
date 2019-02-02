@@ -20,9 +20,9 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
-import javax.ws.rs.core.UriBuilder;
+
 import org.openrecruitment.rest.dto.ApplicantDTO;
-import org.openrecruitment.model.Applicant;
+import org.openrecruitment.persistence.entities.Applicant;
 
 /**
  * 
@@ -92,7 +92,7 @@ public class ApplicantEndpoint {
 			findAllQuery.setMaxResults(maxResult);
 		}
 		final List<Applicant> searchResults = findAllQuery.getResultList();
-		final List<ApplicantDTO> results = new ArrayList<ApplicantDTO>();
+		final List<ApplicantDTO> results = new ArrayList<>();
 		for (Applicant searchResult : searchResults) {
 			ApplicantDTO dto = new ApplicantDTO(searchResult);
 			results.add(dto);

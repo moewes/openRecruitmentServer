@@ -14,7 +14,4 @@
     <changeSet author="maik (generated)" id="1547396203917-2">
         <addPrimaryKey columnNames="id" constraintName="applicantPK" tableName="applicant"/>
     </changeSet>
-    <changeSet author="maik (generated)" id="1547396203917-3">
-        <dropTable tableName="PARTNER"/>
-    </changeSet>
 </databaseChangeLog>

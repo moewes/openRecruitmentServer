@@ -1,7 +1,7 @@
 package org.openrecruitment.rest.dto;
 
 import java.io.Serializable;
-import org.openrecruitment.model.Applicant;
+import org.openrecruitment.persistence.entities.Applicant;
 import javax.persistence.EntityManager;
 import javax.xml.bind.annotation.XmlRootElement;
 
